@@ -1,140 +1,227 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Poppins:wght@500&display=swap');
 
-    :root {
-        --color-fondo: #DBD39A;
-        --font-texto: 'Nunito', sans-serif;
-        --font-titulo: 'Poppins', sans-serif;
-        --color-texto-boton: #ffffff;
-        --color-fondo-boton: #1D425D;
-        --color-fondo-movil: #84D4CC;
-    }
+:root {
+    --color-fondo: #DBD39A;
+    --font-texto: 'Nunito', sans-serif;
+    --font-titulo: 'Poppins', sans-serif;
+    --color-texto-boton: #ffffff;
+    --color-fondo-boton: #1D425D;
+    --color-fondo-movil: #84D4CC;
+}
 
-    body {
-        overflow-x: hidden;
-        background: var(--color-fondo);
-    }
-    
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    
-    }
-    .navigation{
+body {
+    overflow-x: hidden;
+    background: var(--color-fondo);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/* estilos para el bnavbar de pc */
+
+nav {
+    background-color: var(--color-fondo-movil);
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.logo {
+
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 20px;
+    align-self: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 64, 255, 0);
+    list-style: none;
+    color: black;
+    font-size: 20px;
+    align-items: center;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu .items {
+    border: 1px solid rgba(0, 128, 0, 0);
+    padding: 20px;
+    margin-right: 10px;
+}
+
+.sub-menu {
+    display: none !important;
+}
+
+.sub-menu.show {
+    display: block !important;
+    position: absolute;
+    background-color: var(--color-fondo-movil);
+    margin-top: 20px;
+    list-style: none;
+    font-size: 20px;
+    text-align: center !important;
+    padding: 0px;
+}
+
+.sub-menu .sub-menu-items {
+    padding: 20px;
+}
+
+a:hover {
+    color: white;
+}
+
+/* estilos para el navbar de moviles */
+.navigation {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    nav{
         display: none;
     }
-    @media (max-width: 768px) {
     .navigation {
         width: 100%;
         height: 70px;
         background: var(--color-fondo-movil);
         position: fixed;
-        bottom: 0; /* Cambiado de top: 0 a bottom: 0 */
+        bottom: 0;
+        /* Cambiado de top: 0 a bottom: 0 */
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 10px 10px 0 0;
     }
-    
-        .navigation .nav-list {
-            display: flex;
-            width: 100%;
-        }
-        .navigation .list-item {
-            position: relative;
-            list-style: none;
-            width: 70px;
-            height: 70px;
-            z-index: 1;
-            justify-content: center;
-            margin-right:35px;
-        }
-        .navigation .nav-link {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            width: 100%;
-            text-align: center;
-            font-weight: 500;
-        }
-        .navigation .nav-link .icon {
-            position: relative;
-            display: block;
-            line-height: 75px;
-            font-size: 1.5rem;
-            transition: 0.5s;
-            text-align: center;
-            color: var(--color-fondo-boton);
-            
-        }
-        .navigation .list-item.active .nav-link .icon {
-            transform: translateY(-30px);
-            color: white;
-        }
-        .navigation .nav-link .text {
-            color: var(--color-fondo-boton);
-            position: absolute;
-            font-weight: bold;
-            font-size: 1em;
-            letter-spacing: 0.05em;
-            transition: 0.5s;
-            opacity: 0;
-            font-family: var(--font-titulo);
-            transform: translateY(20px);
-            
 
-        }
-        .navigation .list-item.active .nav-link .text {
-            transform: translateY(15px);
-            opacity: 1;
-        }
-        .indicator {
-            position: absolute;
-            top: -50%;
-            width: 70px;
-            height: 70px;
-            background: var(--color-fondo-boton);
-            border-radius: 50%;
-            border: 6px solid var(--color-fondo);
-            transition: 0.5s;
-        }
-        .indicator::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: -21px;
-            width: 20px;
-            height: 20px;
-            background: transparent;
-            border-top-right-radius: 20px;
-            box-shadow: 0px -10px 0 0 var(--color-fondo);
-        }
-        .indicator::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -21px;
-            width: 20px;
-            height: 20px;
-            background: transparent;
-            border-top-left-radius: 20px;
-            box-shadow: 0px -10px 0 0 var(--color-fondo);
-        }
-        .navigation ul li:nth-child(1).active ~ .indicator {
-            left: 4%; /* Ajusta según sea necesario */
-        }
-        .navigation ul li:nth-child(2).active ~ .indicator {
-            left: 22.2%; /* Ajusta según sea necesario */
-        }
-        .navigation ul li:nth-child(3).active ~ .indicator {
-            left:40.5%; /* Ajusta según sea necesario */
-        }
-        .navigation ul li:nth-child(4).active ~ .indicator {
-            left: 59%; /* Ajusta según sea necesario */
-        }
-        .navigation ul li:nth-child(5).active ~ .indicator {
-            left:78%; /* Ajusta según sea necesario */
-        }
+    .navigation .nav-list {
+        display: flex;
+        width: 100%;
     }
+
+    .navigation .list-item {
+        position: relative;
+        list-style: none;
+        width: 70px;
+        height: 70px;
+        z-index: 1;
+        justify-content: center;
+        margin-right: 35px;
+    }
+
+    .navigation .nav-link {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .navigation .nav-link .icon {
+        position: relative;
+        display: block;
+        line-height: 75px;
+        font-size: 1.5rem;
+        transition: 0.5s;
+        text-align: center;
+        color: var(--color-fondo-boton);
+
+    }
+
+    .navigation .list-item.active .nav-link .icon {
+        transform: translateY(-30px);
+        color: white;
+    }
+
+    .navigation .nav-link .text {
+        color: var(--color-fondo-boton);
+        position: absolute;
+        font-weight: bold;
+        font-size: 1em;
+        letter-spacing: 0.05em;
+        transition: 0.5s;
+        opacity: 0;
+        font-family: var(--font-titulo);
+        transform: translateY(20px);
+
+
+    }
+
+    .navigation .list-item.active .nav-link .text {
+        transform: translateY(15px);
+        opacity: 1;
+    }
+
+    .indicator {
+        position: absolute;
+        top: -50%;
+        width: 70px;
+        height: 70px;
+        background: var(--color-fondo-boton);
+        border-radius: 50%;
+        border: 6px solid var(--color-fondo);
+        transition: 0.5s;
+    }
+
+    .indicator::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -21px;
+        width: 20px;
+        height: 20px;
+        background: transparent;
+        border-top-right-radius: 20px;
+        box-shadow: 0px -10px 0 0 var(--color-fondo);
+    }
+
+    .indicator::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -21px;
+        width: 20px;
+        height: 20px;
+        background: transparent;
+        border-top-left-radius: 20px;
+        box-shadow: 0px -10px 0 0 var(--color-fondo);
+    }
+
+    .navigation .nav-list .list-item:nth-child(1).active~.indicator {
+        left: 4%;
+        /* Ajusta según sea necesario */
+    }
+
+    .navigation .nav-list .list-item:nth-child(2).active~.indicator {
+        left: 22.2%;
+        /* Ajusta según sea necesario */
+    }
+
+    .navigation .nav-list .list-item:nth-child(3).active~.indicator {
+        left: 40.5%;
+        /* Ajusta según sea necesario */
+    }
+
+    .navigation .nav-list .list-item:nth-child(4).active~.indicator {
+        left: 59%;
+        /* Ajusta según sea necesario */
+    }
+
+    .navigation .nav-list .list-item:nth-child(5).active~.indicator {
+        left: 78%;
+        /* Ajusta según sea necesario */
+    }
+}

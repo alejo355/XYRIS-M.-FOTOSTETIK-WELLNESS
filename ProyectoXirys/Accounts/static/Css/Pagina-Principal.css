@@ -8,7 +8,9 @@
 }
 body{
     background-color: #84D4CC;
+    overflow: hidden;
 }
+
 .container{
     display: flex;
     flex-direction: column;
