@@ -1,0 +1,58 @@
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Css/Nav.css' %}">
+</head>
+
+<body>
+    <div class="navigation">
+        <ul class="nav-list">
+            <li class="list-item active">
+                <a href="#" class="nav-link">
+                    <span class="icon"><i class='bx bx-home'></i></span>
+                    <span class="text">Inicio</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="#" class="nav-link">
+                    <span class="icon"><i class='bx bx-user'></i></span>
+                    <span class="text">G.Paciente</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="#" class="nav-link">
+                    <span class="icon"><i class='bx bx-file'></i></span>
+                    <span class="text">H.Clinica</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="#" class="nav-link">
+                    <span class="icon"><i class='bx bx-calendar'></i></span>
+                    <span class="text">A.VIrtual</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="#" class="nav-link">
+                    <span class="icon"><i class='bx bx-log-out'></i></span>
+                    <span class="text">Salir</span>
+                </a>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+    </div>
+</body>
+<script>
+    const listItems = document.querySelectorAll('.list-item');
+
+    function activateLink() {
+        listItems.forEach((item) => {
+            item.classList.remove('active');
+        });
+        this.classList.add('active');
+    }
+    
+    listItems.forEach((item) => {
+        item.addEventListener('click', activateLink);
+    });
+</script>

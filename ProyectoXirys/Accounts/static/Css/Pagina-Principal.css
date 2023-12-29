@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Poppins:wght@500&display=swap');
+:root {
+    --font-texto: 'Nunito', sans-serif;/* en este se utiliza el font-weigth:200;*/
+    --font-titulo: 'Poppins', sans-serif; /* en este se utiliza el font-weigth:500;*/
+    --color-texto-boton: #ffffff;
+    --color-fondo-boton: #1D425D;
+
+}
+body{
+    background-color: #84D4CC;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#Logo-Xyris{
+    /* border: 1px solid red; */
+    width: 230px;
+    max-height: 600px;
+}
+.iniciar-sesion {
+    border: none;
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: var(--color-fondo-boton);
+}
+
+.iniciar-sesion-a {
+    text-decoration: none;
+}
+
+.iniciar-sesion-p {
+    color: var(--color-texto-boton);
+    font-family: var(--font-titulo);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;  
+    margin: 0 ;
+    position: relative;
+    left: 10px;
+}
+
+.iniciar-sesion i {
+    opacity: 0;
+    color: var(--color-texto-boton);
+}
+
+.iniciar-sesion:hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iniciar-sesion:hover i {
+    transition: 0.5s ease;
+    font-size: 25px;
+    opacity: 1;
+    position: relative;
+    right: -10px;
+}
+
+@media (max-height: 1000px){
+
+    img{
+        width: 300px;
+        height: 450px;
+        padding: 0 40px;
+    }
+}
+
+
+@media (max-width: 768px){
+    .iniciar-sesion:hover i {    
+        transition: 0.5s ease;
+        font-size: 25px;
+        opacity: 1;
+        position: relative;
+        right: -5px;
+    }
+}
+
+
+@media (max-width: 560px) {
+    #Logo-Xyris{
+        width: 230px;
+        height: 550px;
+    }
+}
+
+
+@media(max-width: 320px) {
+    #Logo-Xyris{
+        width: 230px;
+        height: 400px;
+    }
+    .iniciar-sesion {
+        width: 250px; 
+        height: 40px;  
+    }
+
+    .iniciar-sesion a {
+        font-size: 16px;  
+    }
+}

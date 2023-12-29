@@ -1,0 +1,29 @@
+{% extends 'Layout/base.html'%}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xirys M.</title>
+    <link rel="stylesheet" href="{% static 'Css/Pagina-Principal.css' %}"> {% comment %} link para enlazar los estilos del navbar {% endcomment %}
+
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="{% static 'Img/logo.png' %}" alt="logo" id="Logo-Xyris">
+        </div>
+        <a href="{% url 'login' %}" class="iniciar-sesion-a">
+            <button class="iniciar-sesion">
+                <p class="iniciar-sesion-p">
+                    Iniciar Sesión
+                    <i class='bx bx-right-arrow-circle'></i>
+                </p>
+            </button>
+        </a>
+    </div>
+</body>
+</html>
+{% endblock %}
